@@ -1,0 +1,15 @@
+-DFUSE_USE_VERSION=26
+-D_FILE_OFFSET_BITS=64
+-D_DARWIN_USE_64_BIT_INODE
+-f
+-library osxfuse
+-package suffuse.osxfuse
+-mode Directory
+-scalaStructSetters
+-runtime BridJ
+-emptyStructsAsForwardDecls
+
+/usr/include/sys/stat.h
+/usr/include/sys/event.h
+/usr/include/sys/time.h
+/usr/local/include/osxfuse/fuse/fuse.h
