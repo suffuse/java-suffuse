@@ -1,5 +1,5 @@
-                        name :=  "suffuse-bridj"
-                 description :=  "suffuse bridj-based FUSE bindings"
+                        name :=  "java-suffuse"
+                 description :=  "suffuse java bindings based on bridj"
                 organization :=  "org.improving"
                      version :=  "0.0.1-SNAPSHOT"
                 scalaVersion :=  "2.11.7"
