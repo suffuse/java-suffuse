@@ -2,7 +2,7 @@
                  description :=  "suffuse bridj-based FUSE bindings"
                 organization :=  "org.improving"
                      version :=  "0.0.1-SNAPSHOT"
-                scalaVersion :=  "2.11.6"
+                scalaVersion :=  "2.11.7"
                  logBuffered :=  false
   initialCommands in console +=  "import org.bridj._, suffuse._, osxfuse._, OsxfuseLibrary._"
          libraryDependencies +=  "com.nativelibs4java" % "bridj" % "0.7.0"
