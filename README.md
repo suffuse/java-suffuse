@@ -1,6 +1,6 @@
 Skeletal framework for generating FUSE bindings with [BridJ](https://github.com/nativelibs4java/BridJ).
 
-OSX only at the moment.
+OSX only at the moment. You may have to install [osxfuse from github](https://github.com/osxfuse/osxfuse/releases) and not from brew cask.
 
 ```
 % sbt test

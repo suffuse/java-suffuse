@@ -1,0 +1,21 @@
+#
+sudo: required
+
+cache:
+  directories:
+    - $HOME/.ivy2/cache
+    - $HOME/.sbt
+    - $HOME/.cache
+
+before_install:
+  - "./.ci/pre.sh"
+
+script:
+  - brew install sbt && sbt test
+
+before_cache:
+  - find "$HOME/.sbt" -name "*.lock" -delete
+  - find "$HOME/.ivy2" -name "ivydata-*.properties" -delete
+
+os:
+  - osx
