@@ -1,3 +1,8 @@
+java-suffuse
+------------
+
+[![Build Status](https://travis-ci.org/suffuse/java-suffuse.svg?branch=master)](https://travis-ci.org/suffuse/java-suffuse)
+
 Skeletal framework for generating FUSE bindings with [BridJ](https://github.com/nativelibs4java/BridJ).
 
 OSX only at the moment. You may have to install [osxfuse from github](https://github.com/osxfuse/osxfuse/releases) and not from brew cask.
@@ -6,46 +11,33 @@ OSX only at the moment. You may have to install [osxfuse from github](https://gi
 % sbt test
 Auto-configuring parser...
 Parsing native headers...
-/usr/include/sys/cdefs.h:74:25: warning: #warning "Unsupported compiler detected"
 Normalizing parsed code...
 Generating libraries...
-Generating ostat.java
-Generating stat.java
-Generating stat64.java
-Generating kevent.java
-Generating kevent64_s.java
-Generating klist.java
-Generating itimerval.java
-Generating timezone.java
-Generating clockinfo.java
-Generating fuse_opt.java
-Generating fuse_args.java
-Generating fuse_file_info.java
-Generating fuse_conn_info.java
-Generating flock.java
-Generating flocktimeout.java
-Generating radvisory.java
-Generating fcodeblobs.java
-Generating fsignatures.java
-Generating fstore.java
-Generating fbootstraptransfer.java
-Generating log2phys.java
-Generating statvfs.java
+[...]
 Generating fuse_operations.java
 Generating fuse_context.java
 Generating fuse_module.java
 Generating OsxfuseLibrary.java
 #
 # SUCCESS: JNAeration completed !
-# Output mode is 'Directory(Bindings sources in simple file hierarchy)
 #
-# => '/g/java-suffuse/target/scala-2.11/src_managed/main/c'
-#
-[info] Compiling 1 Scala source and 26 Java sources to /g/java-suffuse/target/scala-2.11/classes...
-[info] Compiling 1 Scala source to /g/java-suffuse/target/scala-2.11/test-classes...
-[info] Test run started
-[info] Test suffuse.tests.SmokeTest.makeDirectory started
-[info] Test run finished: 0 failed, 0 ignored, 1 total, 0.104s
-[info] Passed: Total 1, Failed 0, Errors 0, Passed 1
-[success] Total time: 6 s, completed 18-Jul-2015 17:41:38
+[info] Test suffuse.tests.SmokeTest.mkdirTest started
+[info] Test suffuse.tests.SmokeTest.statTest started
+// size = 80, alignment = 8
+struct struct_stat {
+  @Field(0) int st_dev; // offset = 0, length = 4, alignment = 4
+  @Field(1) short st_mode; // offset = 4, length = 2, alignment = 2
+  ...
+  @Field(12) int st_lspare; // offset = 60, length = 4, alignment = 4
+  @Field(13) Pointer<Long> st_qspare;
+}
+/var/folders/gw/_2jq29095y7b__wtby9dg_5h0000gn/T/suffuse4158558868993322369
+struct_stat {
+  st_dev = 16777218;
+  st_mode = 4070;
+  ...
+  st_gen = ?;
+  st_qspare = ?;
+}
+[success] Total time: 40 s, completed Mar 11, 2016 8:19:30 AM
 ```
